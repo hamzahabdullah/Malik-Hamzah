@@ -1,0 +1,39 @@
+withdrawalAmount denotes the amount entered by the customer.
+accountBalance denotes the amount in the account.
+finalWithdrawadAmount dentoes the final ammount withdrawad from account.
+serviceFees denotes the service fees for more than 300$ withdrawals.
+serviceCharge denotes the extra charge when you don't have enough money in account. 
+accountDebit denotes the money owed to the account.
+
+if accountBalance is less than or equal zero
+print "No money in the account or balance is negative."
+
+otherwise if withdrawalAmount is bigger than 500$
+print "Maximun withdrawal is 500$ per day."
+
+otherwise if withdrawalAmount is less than or equal 300$ and accountBalance is bigger than or equal withdrawalAmount 
+serviceFees = 0
+serviceCharge = 0
+finalWithdrawadAmount = withdrawalAmount + serviceFees + serviceCharge
+accountDebit = 0
+
+otherwise if withdrawalAmount is more than 300$ and accountBalance is bigger than or equal (withdrawalAmount + the service fees)
+serviceFees = (withdrawalAmount - 300) * 0.04
+serviceCharge = 0
+finalWithdrawadAmount = withdrawalAmount + serviceFees + serviceCharge
+accountDebit = 0
+
+otherwise if withdrawalAmount is more than 300$ and accountBalance is less than (withdrawalAmount + the service fees)
+serviceFees = (withdrawalAmount - 300) * 0.04
+serviceCharge = 25
+finalWithdrawadAmount = withdrawalAmount 
+accountDebit = serviceFees + serviceCharge + (withdrawalAmount  - accountBalance)
+
+otherwise if withdrawalAmount is less than or equal 300$ and accountBalance is less than withdrawalAmount
+serviceFees = 0
+serviceCharge = 25
+finalWithdrawadAmount = withdrawalAmount 
+accountDebit = serviceFees + serviceCharge + (withdrawalAmount  - accountBalance)
+
+print finalWithdrawadAmount value
+print accountDebit value
