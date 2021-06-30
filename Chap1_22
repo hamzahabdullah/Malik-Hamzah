@@ -1,0 +1,58 @@
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+	double withdrawalAmount; //Amount to be withdrawad entered by the user
+	double accountBalance; //Account balance to be entered by the user 
+	double finalWithdrawadAmount = 0; //Final withdrawing amount 
+	double serviceFees; //4% for more than 300 withdrawals
+	double serviceCharge; //25$ when your balance isn't enough 
+	double accountDebit = 0; //Amount you owe 
+
+	cout << "Please enter the desired money to be withdrawad: ";
+	cin >> withdrawalAmount;
+
+	cout << endl;
+
+	cout << "Please enter the account balance: ";
+	cin >> accountBalance;
+
+	cout << endl;
+
+	if (accountBalance <= 0)
+		cout << "No money in the account or the balance is negative."<<endl;
+	else if (withdrawalAmount > 500)
+		cout << "Maximun withdrawal is 500$ per day."<<endl;
+	else if (withdrawalAmount <= 300 && accountBalance >= withdrawalAmount)
+	{
+		serviceFees = 0;
+		serviceCharge = 0;
+		accountDebit = 0;
+		finalWithdrawadAmount = withdrawalAmount + serviceFees + serviceCharge;
+	}
+	else if (withdrawalAmount > 300 && (accountBalance >= (withdrawalAmount + ((withdrawalAmount - 300) * 0.04))))
+	{
+		serviceFees = (withdrawalAmount-300) * 0.04;
+		serviceCharge = 0;
+		accountDebit = 0;
+		finalWithdrawadAmount = withdrawalAmount + serviceFees + serviceCharge;
+	}
+	else if ((withdrawalAmount > 300) && (accountBalance < (withdrawalAmount + ((withdrawalAmount - 300) * 0.04))))
+	{
+		serviceFees = (withdrawalAmount - 300) * 0.04;
+		serviceCharge = 25;
+		finalWithdrawadAmount = withdrawalAmount;
+		accountDebit = serviceFees + serviceCharge + (withdrawalAmount - accountBalance);
+	}
+	else if (withdrawalAmount <= 300 && accountBalance < withdrawalAmount)
+	{
+		serviceFees = 0;
+		serviceCharge = 25;
+		finalWithdrawadAmount = withdrawalAmount;
+		accountDebit = serviceFees + serviceCharge + (withdrawalAmount - accountBalance);
+	}
+	cout << "The total withdrawad amount is: " << finalWithdrawadAmount << "$" << endl;
+	cout << "The total debit amount is: " << accountDebit << "$" << endl;
+}
