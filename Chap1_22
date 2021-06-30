@@ -29,14 +29,12 @@ int main()
 	{
 		serviceFees = 0;
 		serviceCharge = 0;
-		accountDebit = 0;
 		finalWithdrawadAmount = withdrawalAmount + serviceFees + serviceCharge;
 	}
 	else if (withdrawalAmount > 300 && (accountBalance >= (withdrawalAmount + ((withdrawalAmount - 300) * 0.04))))
 	{
 		serviceFees = (withdrawalAmount-300) * 0.04;
 		serviceCharge = 0;
-		accountDebit = 0;
 		finalWithdrawadAmount = withdrawalAmount + serviceFees + serviceCharge;
 	}
 	else if ((withdrawalAmount > 300) && (accountBalance < (withdrawalAmount + ((withdrawalAmount - 300) * 0.04))))
