@@ -1,0 +1,36 @@
+payRate denotes pay rate per hour.
+numOfHours dentoes the number of hours worked per week.
+incomeBeforeTax denotes the total amount you made in 5 weeks before paying taxes.
+incomeAfterTax denotes the total amount you made in 5 weeks after paying taxes.
+
+
+print "Please enter the pay rate per hour: "
+cin >> payRate 
+
+print "Please enter the number of hours you worked each week: "
+cin >> numOfHours
+
+incomeBeforeTax = numOfHours*payRate*5(weeks)
+incomeAfterTax = incomeBeforeTax - (incomeBeforeTax*0.14)
+
+
+print "Your income before the tax: "
+print incomeBeforeTax 
+
+print "Your income after the tax: "
+print incomeAfterTax 
+
+print "The money you spent on clothes and other accessories: "
+print incomeAfterTax*0.10
+
+print "The money you spent to buy school supplies: "
+print incomeAfterTax*0.01
+
+print "The money you spent on buying savings bonds: "
+print ((incomeAfterTax - (incomeAfterTax*0.10 + incomeAfterTax*0.01))*0.25)
+
+print "The money your parents spent to buy additional savings bonds for you: "
+print ((incomeAfterTax - (incomeAfterTax*0.10 + incomeAfterTax*0.01))*0.25*0.50)
+
+
+
