@@ -9,7 +9,8 @@ struct student
 	int sub1, sub2, sub3;
 	int avg;
 };
-
+//There's nothing in the requirements to imply each student has more than one score, and definitely nothing to say it's 3.
+//See lines 43 and 52
 int main()
 {
 	int avg = 0;
@@ -39,7 +40,7 @@ int main()
 		students[i].avg = (students[i].sub1 + students[i].sub2 + students[i].sub3) / 3;
 		avg += students[i].avg;
 	}
-	avg = avg / sizeFromUser;
+	avg = avg / sizeFromUser;//<---Watch for the discussion in Stroustrop chapter 3 for integer division
 
 	
 	cout << "Students with grades below than the average: " << endl;
@@ -48,7 +49,7 @@ int main()
 			cout << students[i].studentName << " ";
 
 	highestTestScore = students[0].avg;
-	for (int i = 0; i < sizeFromUser; i++)
+	for (int i = 0; i < sizeFromUser; i++)//<---You can start i at 1 - highest test score from line 50 can't be < students[0].avg
 		if (highestTestScore < students[i].avg)
 			highestTestScore = students[i].avg;
 
