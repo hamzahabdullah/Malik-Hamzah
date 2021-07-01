@@ -6,14 +6,13 @@ using namespace std;
 struct student
 {
 	string studentName;
-	int sub1, sub2, sub3;
-	int avg;
+	int score;
 };
-//There's nothing in the requirements to imply each student has more than one score, and definitely nothing to say it's 3.
-//See lines 43 and 52
+
+
 int main()
 {
-	int avg = 0;
+	double avg = 0;
 	const int SIZE = 100;
 	int highestTestScore;
 	student students[SIZE];
@@ -25,37 +24,31 @@ int main()
 
 	for (int i = 0; i < sizeFromUser; i++)
 	{
-		cout << "Enter student name number" << i + 1 <<": ";
-		cin >> students[i].studentName; 
+		cout << "Enter student name number" << i + 1 << ": ";
+		cin >> students[i].studentName;
 		cout << endl;
-		cout << "Enter the first grade for studnet number " << i + 1 << ": ";
-		cin >> students[i].sub1;
-		cout << endl;
-		cout << "Enter the second grade for studnet number " << i + 1 << ": ";
-		cin >> students[i].sub2;
-		cout << endl;
-		cout << "Enter the third grade for studnet number " << i + 1 << ": ";
-		cin >> students[i].sub3;
+		cout << "Enter the score for studnet number " << i + 1 << ": ";
+		cin >> students[i].score;
 		cout << endl << endl;
-		students[i].avg = (students[i].sub1 + students[i].sub2 + students[i].sub3) / 3;
-		avg += students[i].avg;
+		avg += students[i].score;
 	}
-	avg = avg / sizeFromUser;//<---Watch for the discussion in Stroustrop chapter 3 for integer division
+	avg = avg / sizeFromUser;
 
-	
+
 	cout << "Students with grades below than the average: " << endl;
 	for (int i = 0; i < sizeFromUser; i++)
-		if (students[i].avg < avg)
+		if (students[i].score < avg)
 			cout << students[i].studentName << " ";
 
-	highestTestScore = students[0].avg;
-	for (int i = 0; i < sizeFromUser; i++)//<---You can start i at 1 - highest test score from line 50 can't be < students[0].avg
-		if (highestTestScore < students[i].avg)
-			highestTestScore = students[i].avg;
+	highestTestScore = students[0].score;
+	for (int i = 1; i < sizeFromUser; i++)
+		if (highestTestScore < students[i].score)
+			highestTestScore = students[i].score;
 
 	cout << "\nStudnets with the highest test score are: " << endl;
 	for (int i = 0; i < sizeFromUser; i++)
-		if (students[i].avg == highestTestScore)
+		if (students[i].score == highestTestScore)
 			cout << students[i].studentName << " ";
 
 }
+
