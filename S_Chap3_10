@@ -1,0 +1,55 @@
+#include "..\std_lib_facilities.h"
+
+int main()
+{
+	string operation;
+	double num1, num2;
+	int num1Int, num2Int;
+
+	cout << "Please enter an operation followed by two numbers: ";
+	cin >> operation >> num1 >> num2;
+
+	num1Int = num1;
+	num2Int = num2;
+
+	if (operation == "+")
+		cout << num1 + num2;
+	else if (operation == "+=")
+		cout << (num1 += num2);
+	else if (operation == "-")
+		cout << num1 - num2;
+	else if (operation == "-=")
+		cout << (num1 -= num2);
+	else if (operation == "*")
+		cout << num1 * num2;
+	else if (operation == "*=")
+		cout << (num1 *= num2);
+	else if (operation == "/")
+		cout << num1 / num2;
+	else if (operation == "/=")
+		cout << (num1 /= num2);
+	else if (operation == "%")
+		cout << num1Int % num2Int;
+	else if (operation == "%=")
+		cout << (num1Int %= num2Int);
+	else if (operation == "++")
+		cout << ++num1 << " " << ++num2;
+	else if (operation == "--")
+		cout << --num1 << " " << --num2;
+	else if (operation == "==")
+	{
+		if (num1 == num2)
+			cout << "True.";
+		else
+			cout << "False.";
+	}
+	else if (operation == "!=")
+	{
+		if (num1 != num2)
+			cout << "True.";
+		else
+			cout << "False.";
+	}
+	else 
+		cout << "Invalid input.";
+}
