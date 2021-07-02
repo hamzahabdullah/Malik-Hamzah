@@ -1,0 +1,10 @@
+prompt the user to enter an operation followed by two opreands
+
+read the operation into a string called operation
+read the opreands into variables of type double
+
+convert the two numbers to integers for using the modulo
+
+use if statemnt for figuring out which operation the user wants
+
+print out the correct answer depending on which operation the user chose
