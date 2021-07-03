@@ -12,6 +12,26 @@ int main()
 	num1Int = num1;
 	num2Int = num2;
 
+	/*20210702 - A few comments - good progress
+	* First, this gets the job done, but a switch statement would be more natural since you are choosing among
+	* similar mutually exclusive items.  Nested if statements are best reserved for situations where the conditions
+	* are dissimilar.
+	* Second, there is no need to do the conversion to int for every number pair; only if the operator is %.  So
+	* lines 12 and 13 belong inside the if(operation == "%') and "%=".  And since all of the x= operators do the same
+	* thing as x, you could write if(operation == "+" || operation == "+=") and so on.
+	* Third, converting floating point to integer.  Reread section 3.9.2 Unsafe Type Conversions beginning on p.80.
+	* If your iputs are 7.0 and 3.99, then num1Int will be 7 and num2Int will be 3 - probably not what was intended.
+	* One way to fix this is to add .5 before doing the conversion, so (7.0 + .5) = 7.5, 7 when converted to int.
+	* (3.99 + .5) = 4.49, 4 when coverted to int.
+	* Fourth, you have warnings from the compiler on lines 12 and 13 for your unsafe type conversions.  There is a way
+	* tell the compiler that you really meant to change a double to an int.  It is called the cast operator, and it is
+	* done by enclosing the target type in parens before the source, e.g., num1Int = (int) num1;  Now the compiler
+	* knows you really did mean to change to an int, and it presumes you understand the implications of the change.
+	* There is more to casting which will be addressed at a later time.
+	* Finally, just for the record, there are many more operators.  This is an adequate list for the moment.
+	*/
+
+
 	if (operation == "+")
 		cout << num1 + num2;
 	else if (operation == "+=")
@@ -50,6 +70,6 @@ int main()
 		else
 			cout << "False.";
 	}
-	else 
+	else
 		cout << "Invalid input.";
 }
