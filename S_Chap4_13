@@ -1,0 +1,16 @@
+#include "..\std_lib_facilities.h"
+
+/* I followed the most basic approach for this program, although there are more efficient and complex ways
+of doing it, but thought I would stick with what the book gave so far. */
+
+int main()
+{
+	cout << "Prime numbers between 1-100 are: ";
+	for (int i = 2; i <= 100; i++)
+	{
+		if ((i % 2 == 0 && i >= 2 * 2) || (i % 3 == 0 && i >= 3 * 3) || (i % 5 == 0 && i >= 5 * 5) || (i % 7 == 0 && i >= 7 * 7))
+		{}//I know that the proper thing here is a continue; statement, but I thought I would follow what the book gave so far.
+		else
+			cout << i << ", ";
+	}
+}
