@@ -1,5 +1,7 @@
 #include "..\std_lib_facilities.h"
 
+/* What about a = 0?  if b*b - 4*a*c is negative? */
+
 int main()
 {
 	double a = 0.0, b = 0.0, c = 0.0;
