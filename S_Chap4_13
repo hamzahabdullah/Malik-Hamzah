@@ -2,6 +2,10 @@
 
 /* I followed the most basic approach for this program, although there are more efficient and complex ways
 of doing it, but thought I would stick with what the book gave so far. */
+/* This is not the Sieve of Erasthones.  Also, it is not acceptable to make your program so it is not generalizable to say, primes < 1000.
+* The purpose of this exercise is not to just get the right answer, but to give you experience in researching a problem and using the
+* material that was taught in the chapter.
+*/
 
 int main()
 {
