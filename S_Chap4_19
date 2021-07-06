@@ -1,0 +1,27 @@
+#include "..\std_lib_facilities.h"
+
+int main()
+{
+	vector <string> names;
+	vector <int> scores;
+
+	cout << "Enter names followed by scores for each person at a time: \nNOTE: enter \"NoName\" followed by 0 to terminate prgoram." << endl;
+	for (string enter; cin >> enter;)
+	{
+		int x;
+		cin >> x;
+		for (int i = 0; i < names.size(); i++)
+			if (enter == names[i])
+			{
+				cout << "Error, name entered twice!";
+				return 0;
+			}
+		if (enter == "NoName" && x == 0)
+			break;
+		names.push_back(enter);
+		scores.push_back(x);
+	}
+	cout << "\n";
+	for (int i = 0; i < names.size(); i++)
+		cout << names[i] << " " << scores[i] << endl;
+}
