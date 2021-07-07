@@ -13,6 +13,6 @@ int main()
 {
 	double c = 0; // declare input variable
 	cin >> c; // retrieve temperature to input variable
-	double kelvien = ctok(c); // convert temperature
-	cout << kelvien << '\n'; // print out temperature
+	double Kelvin = ctok(c); // convert temperature
+	cout << Kelvin << '\n'; // print out temperature
 }
