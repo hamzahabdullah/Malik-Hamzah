@@ -1,0 +1,39 @@
+#include "..\std_lib_facilities.h"
+
+double ctok(double entry) // converts Celsius to Kelvin
+{
+	if (entry < -273.15)
+		error("Lowest Celsius temperature is -273.15!");
+	double k = entry + 273.15;
+	return k;
+}
+
+double ktoc(double entry) //converts Kelvin to Celsius
+{
+	if (entry < 0)
+		error("Lowest Kelvin temperature is 0!");
+	double c = entry - 273.15;
+	return c;
+}
+
+int main()
+{
+	double entry = 0; // declare input variable
+	string input = " ";
+	double convert = 0;
+
+	cout << "Enter a temperature in Celsuis or Kelvin: ";
+	cin >> entry; // retrieve temperature to input variable
+	
+	cout << "Enter \"cToK\" to convert from Celsius to Kelvin or \"kToc\" to convert from Kelvin to Celsuis: ";
+	cin >> input;
+
+	if (input == "cTok")
+		convert = ctok(entry);
+	else if (input == "kToc")
+		convert = ktoc(entry);
+	else
+		cout << "Invalid input. " << endl;
+
+	cout << convert << '\n'; // print out converted temperature
+}
