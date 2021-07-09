@@ -3,7 +3,7 @@
 double ctok(double entry) // converts Celsius to Kelvin
 {
 	if (entry < -273.15)
-		error("Lowest Celsius temperature is -273.15!");
+		simple_error("Lowest Celsius temperature is -273.15!");
 	double k = entry + 273.15;
 	return k;
 }
@@ -11,7 +11,7 @@ double ctok(double entry) // converts Celsius to Kelvin
 double ktoc(double entry) //converts Kelvin to Celsius
 {
 	if (entry < 0)
-		error("Lowest Kelvin temperature is 0!");
+		simple_error("Lowest Kelvin temperature is 0!");
 	double c = entry - 273.15;
 	return c;
 }
