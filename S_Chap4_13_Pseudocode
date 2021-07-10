@@ -1,24 +1,16 @@
-find primes up to n(100)
+Goal: finding all prime numbers between 1 and 100, using "Sieve of Eratosthenes" method
+"Sieve of Eratosthenes" method works as follows: 
 
+assume that all numbers are unmarked, start at 2 because 1 isn't a prime
 
-//vector to store the non prime number: 
-vecotr <int> notPrime;
+we know that the first unmarked number 2 is a prime
 
+eliminate all multiples of 2
 
-//mark all the non prime numbers by storing them in notPrime vector: 
-(int i = 2; i < 100; i++)
-{
-	for(int j = 0; j <= notPrime.size(); j++)
-		if(i != notPrime[j])
-			for (int k = 2; k < 100; k++)
-				if (k % i == 0 && k >= i * i)
-					notPrime.push_back(k)
-}	
-			
+go to the next unmarked number 3 -is a prime, eliminate all multiples of 3 starting with 9
 
-//print out the prime numbers by checking if they are notPrime or not: 
-(int i = 2; i < 100; i++)
-{
-	if(i != notPrime[i])
-		cout << i << " "
-}
+next unmarked number is 5 is prime, eliminate all multiples of 5 starting with 25
+
+7 is numarked so its prime, starting at 49 eliminate all multiples of 7
+
+next is 11 but 11 square equals 121 which is >100, so all remaining unmarked numbers are prime
