@@ -1,3 +1,10 @@
+/**************************************************
+* Perfect, except you need to add the printing of *
+* the primes.  Remember, you are trying to de-    *
+* scribe the Wikipedia animation.                 *
+***************************************************/                                                 
+
+
 Goal: finding all prime numbers between 1 and 100, using "Sieve of Eratosthenes" method
 "Sieve of Eratosthenes" method works as follows: 
 
