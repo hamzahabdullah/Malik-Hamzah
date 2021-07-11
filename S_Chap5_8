@@ -1,0 +1,46 @@
+#include "..\std_lib_facilities.h"
+
+
+int main()
+{
+	int entry;
+	int sum = 0;
+	vector <int> intValues;
+
+	//Ask the user to input the number of values we want to find the sum of:
+	cout << "Please enter the number of values you want to sum:";
+	cin >> entry;
+
+	//Ask the user to input the numbers to be stored in the vector:
+	cout << "\nPlease enter some integers(press '|' to stop):";
+
+	try
+	{
+		int count = 0;
+		for (int x; cin >> x;)
+		{
+			if (x == '|')
+				break;
+			intValues.push_back(x);
+			count++;
+		}
+		if (count >= entry)
+		{
+			//Find the sum of the specified number by the user:
+			for (int i = 0; i < entry; i++)
+				sum += intValues[i];
+
+			//Print out the sum of the first n number:
+			cout << "\nThe sum of the first " << entry << " numbers ( ";
+			for (int i = 0; i < entry; i++)
+				cout << intValues[i] << " ";
+			cout << ") is: " << sum << "\n";
+		}
+		else
+			throw ("Count can't be less than entry");
+	}
+	catch (...)
+	{
+		cout << "\nThe numbers to find the sum of have to be less than or equal to the numbers entered!\n";
+	}
+}
