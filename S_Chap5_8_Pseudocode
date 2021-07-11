@@ -1,0 +1,10 @@
+/*A program that reads and stores a series of integers*\
+
+1) Ask for N value from user.
+
+2) Read the values entered by the user to a vector.
+
+3) If the vecotr size is less than N, then tell user "Vector size has to be bigger than or equal to N.".
+
+4) Calculate the sum of the first N values.
+
